@@ -1,0 +1,60 @@
+﻿
+@model List<University_Mangement_System.EF.tbl_Students>
+
+@{
+    ViewBag.Title = "StudentList";
+}
+
+<table class="table table-hover">
+
+    <tr>
+
+        <th>Name</th>
+        <th>FName</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Description</th>
+
+    </tr>
+
+    @foreach(var item in Model)
+            {
+<tr>
+    <td>@item.name</td>
+    <td>@item.fname</td>
+    <td>@item.email</td>
+    <td>@item.mobile</td>
+    <td>@item.description</td>
+
+    <td>
+
+        <a href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+        <a href="@Url.Action("Delete",new {@item.id })"><i class="glyphicon glyphicon-trash"></i></a>
+
+
+    </td>
+
+
+</tr>
+                 
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>

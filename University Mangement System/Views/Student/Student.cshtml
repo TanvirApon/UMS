@@ -1,0 +1,68 @@
+﻿
+@model University_Mangement_System.EF.tbl_Students
+
+
+@{
+    ViewBag.Title = "Student";
+}
+
+<style>
+
+    .error{
+
+        color:red;
+
+    }
+
+
+</style>
+
+@using (Html.BeginForm("AddStudent","Student",FormMethod.Post))
+            {
+<div class="container">
+
+    <div class="form-group">
+        <label>Name</label>
+        @Html.ValidationMessageFor(x => x.name,"",new { @class = "error" })
+        @Html.TextBoxFor(x => x.name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Father's Name</label>
+        @Html.ValidationMessageFor(x => x.fname, "", new { @class = "error" })
+        @Html.TextBoxFor(x => x.fname, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        @Html.ValidationMessageFor(x => x.email, "", new { @class = "error" })
+        @Html.TextBoxFor(x => x.email, new { @class = "form-control" })
+    </div>
+
+
+    <div class="form-group">
+        <label>Mobile</label>
+        @Html.ValidationMessageFor(x => x.mobile, "", new { @class = "error" })
+        @Html.TextBoxFor(x => x.mobile, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Description</label>
+        @Html.ValidationMessageFor(x => x.description, "", new { @class = "error" })
+        @Html.TextBoxFor(x => x.description, new { @class = "form-control", @rows = "10" })
+    </div>
+
+
+    <div class="form-group">
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-danger">Cancel</button>
+
+    </div>
+
+
+</div>
+
+
+  }
+
